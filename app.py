@@ -56,7 +56,10 @@ for col in [height_col, weight_col, bmi_col] + list(subject_map.values()):
 
 # --- General Average ---
 df['General Average'] = df[list(subject_map.values())].mean(axis=1)
-
+# --- FIX DATA ENTRY ERROR: Respondent 55 ---
+df.loc[df['Respondent ID'] == 55, 'Weight (kg)'] = 28.5
+df.loc[df['Respondent ID'] == 55, 'BMI'] = round(28.5 / (1.26 ** 2), 1)
+df.loc[df['Respondent ID'] == 55, 'BMI Category'] = 'Normal'
 # ============ TABLE 1 ============
 st.header("Table 1 — Demographic Profile")
 demo = df['Grade Level'].value_counts().sort_index()
