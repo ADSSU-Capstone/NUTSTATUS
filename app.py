@@ -2,7 +2,6 @@
 # NUTRITIONAL STATUS & ACADEMIC ACHIEVEMENTS — FULL ANALYSIS
 # Run in Google Colab. Upload NS-AA-B-0-J-1.xlsx first.
 # ============================================================
-!pip install openpyxl -q
 
 import pandas as pd
 import numpy as np
